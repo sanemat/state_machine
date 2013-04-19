@@ -129,6 +129,16 @@ if RUBY_VERSION > "1.9.2"
   end
 end
 
+if RUBY_VERSION > "1.9.2"
+  appraise "active_record_head" do
+    gem "sqlite3", "1.3.6"
+    gem "activerecord", "4.0.0.beta1", :git => "git://github.com/rails/rails.git"
+    gem "activerecord-deprecated_finders", "1.0.1"
+    gem "protected_attributes", "1.0.0"
+    gem "rails-observers", "0.1.1"
+  end
+end
+
 # ActiveModel integrations
 if RUBY_VERSION > "1.8.6" && RUBY_VERSION < "2.0.0"
   appraise "active_model_3.0.0" do
